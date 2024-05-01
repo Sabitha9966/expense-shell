@@ -54,7 +54,8 @@ VALIDATE $? "Creating app directory"
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip  &>>$LOGFILE
 VALIDATE $? "downloading the app code"
 
-cd /app  
+cd /app 
+rm -rf /app/*  #if we run repeatedly strcking at unziop,so we use remove command and next unzip
 unzip /tmp/backend.zip  &>>$LOGFILE
 VALIDATE $? "Extracted backend code"
 
