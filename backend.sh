@@ -46,3 +46,6 @@ else
     echo  -e "useradd expense already exists...$Y SKIPPING $N"
 fi    
 
+mkdir -p /app
+VALIDATE $? "Creating app directory"
+
